@@ -10,7 +10,7 @@ export default class App extends Component {
     super();
     this.state = {
       firstName: 'First',
-      lastName: 'Last',
+      lastName: 'Last Name',
       jobTitle: 'Software Developer',
       mobile: '07449493186',
       email: 'email@mail.co.uk',
