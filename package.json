@@ -2,7 +2,7 @@
   "name": "cv-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://escended.github.io/cv-builder",
+  "homepage": "http://escended.github.io/cv-builder/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
