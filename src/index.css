@@ -135,3 +135,12 @@ section {
   padding: 5px;
   /* height: 200px; */
 }
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.skill {
+  width: 80%;
+}
