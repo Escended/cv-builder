@@ -1,35 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Button from './Button';
 import Skill from './Skill';
-export default class Skills extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: '',
-    };
-  }
 
-  handleChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value,
-    });
-  }
-
-  render() {
-    return (
-      <div className='section-title'>
-        <h3>Skills</h3>
-        <div className='skills'>
-          <Skill name={this.state.name} handleChange={this.handleChange} />
-          <Skill name={this.state.name} handleChange={this.handleChange} />
-          <Skill name={this.state.name} handleChange={this.handleChange} />
-          <Skill name={this.state.name} handleChange={this.handleChange} />
-          <Skill name={this.state.name} handleChange={this.handleChange} />
+const Skills = ({ skills, onAdd, showAdd }) => {
+  return (
+    <div className='education'>
+      <div className='section'>
+        <h4>Skills</h4>
+        <div className='skill-strip'>
+          {skills.map((skill) => (
+            <Skill key={skill.id} skill={skill} />
+          ))}
         </div>
       </div>
-    );
-  }
-}
+      <Button
+        color={showAdd ? 'pink' : 'lightgrey'}
+        text={showAdd ? 'Close' : 'Add'}
+        onClick={onAdd}
+      />
+    </div>
+  );
+};
+
+export default Skills;

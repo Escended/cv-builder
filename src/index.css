@@ -1,5 +1,4 @@
 body {
-  border-left: 4px black solid;
   width: 800px;
   margin: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -14,133 +13,208 @@ code {
     monospace;
 }
 
-.first-name {
-  grid-area: first-name;
+.App {
+  border-left: 4px black solid;
 }
 
-.input-name {
-  margin-left: 5px;
-  font-size: 50px;
-  max-width: inherit;
-  overflow: hidden;
-}
-
-.last-name {
-  grid-area: last-name;
-}
-
-input {
-  width: 90%;
-}
-section {
-  overflow: hidden;
-}
-.contact {
-  margin-right: 10px;
-  justify-self: end;
-  grid-area: contact;
-  display: grid;
-
-  /* margin-top: 50px; */
-  grid-template-columns: 20px 150px;
-  grid-template-rows: 25px 25px;
-  gap: 10px;
-  grid-template-areas:
-    'icon mobile'
-    'icon2 email';
-}
-
-.job-title {
-  grid-area: job-title;
-  margin-left: 5px;
-  font-size: 30px;
-  max-width: inherit;
-  overflow: hidden;
-  font-weight: 800;
-}
-.icon {
-  justify-self: center;
-  margin-top: 1px;
-}
-.mail-svg {
-  grid-area: icon2;
-  align-self: center;
-}
-.mobile-svg {
-  /* margin-top: 5px; */
-  grid-area: icon;
-  align-self: center;
-}
-.email {
-  grid-area: email;
-  margin: 0;
-  align-self: center;
-}
-
-.mobile {
-  margin: 0;
-  grid-area: mobile;
-  font-size: 15px;
-  align-self: center;
-}
-.contact input {
-  font-size: 11px;
-  width: 80%;
-  height: 10%;
-}
-
-.Header {
+.header {
+  width: 700px;
   font-family: 'Times New Roman', Times, serif;
-  display: grid;
-  background-color: rgba(61, 61, 61, 0.281);
-  grid-template-columns: 300px auto 200px;
-  grid-template-rows: 70px 70px 70px;
-  border-bottom: 2px black solid;
-
-  grid-template-areas:
-    'first-name . .'
-    'last-name . .'
-    'job-title . contact';
-}
-
-.section-title {
-  padding-left: 10px;
-  border-bottom: 2px solid black;
-}
-
-.school-degree {
-  margin-bottom: 10px;
+  background-color: rgba(61, 61, 61, 0.247);
   display: flex;
   justify-content: space-between;
 }
-.school {
-  margin-right: 19px;
-}
-.grade {
-  font-weight: 500;
-}
-.date {
-  width: 50%;
-}
 
-.name {
-  font-weight: 500;
-}
-
-.desc,
-.tech {
+.personal-info {
+  width: 300px;
   margin-left: 20px;
+}
+
+.contact-info {
+  width: 200px;
+  position: relative;
   margin-right: 20px;
-  display: grid;
-  padding: 5px;
-  /* height: 200px; */
+  margin-bottom: 10px;
+}
+.shift {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
-.skills {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+.inline-text_copy--active,
+.inline-text_input--active {
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  padding: 0;
+  background: none;
+  border: none;
+  /* border-bottom: 1px dashed #666666; */
 }
 
-.skill {
-  width: 80%;
+.inline-text_copy--active {
+  cursor: pointer;
+}
+
+.inline-text_copy--hidden,
+.inline-text_input--hidden {
+  display: none;
+}
+
+.inline-text_input--active {
+  border-bottom: 1px solid #666666;
+
+  text-align: left;
+}
+
+.section {
+  width: 700px;
+  border-bottom: 2px black solid;
+  /* border-left: 4px black solid; */
+}
+
+.section h4 {
+  margin-left: 20px;
+}
+
+.edu-form {
+  position: absolute;
+  margin-left: 140px;
+  margin-top: 10px;
+  display: grid;
+  flex-wrap: wrap;
+  width: 450px;
+  justify-items: center;
+  border: 2px grey solid;
+  padding-top: 30px;
+  background-color: white;
+}
+
+.edu-form-item {
+  display: flex;
+  /* align-content: space-between; */
+  width: 350px;
+  justify-content: space-between;
+}
+
+.education {
+  display: flex;
+  width: 820px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.15em solid black;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: black;
+  text-align: center;
+  transition: all 0.2s;
+  height: 50px;
+  width: 100px;
+  /* justify-self: center; */
+  align-self: center;
+  background-color: white;
+}
+
+.btn:hover {
+  color: white;
+  background-color: grey;
+  cursor: pointer;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.add-form {
+  margin-bottom: 40px;
+}
+
+.form-control label {
+  display: block;
+}
+
+.form-control input {
+  width: 90%;
+  height: 40px;
+  margin: 2px;
+  padding: 3px 7px;
+  font-size: 17px;
+}
+
+.form-control-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control-check label {
+  flex: 1;
+}
+
+.form-control-check input {
+  flex: 2;
+  height: 10px;
+}
+
+.btn1 {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.btn1:focus {
+  outline: none;
+}
+
+.btn1:active {
+  transform: scale(0.98);
+}
+
+.btn1-block {
+  display: block;
+  width: 40%;
+}
+
+.study-strip {
+  display: flex;
+  /* justify-content: space-evenly; */
+  font-size: 14px;
+}
+
+.study-strip h4 {
+  width: 200px;
+}
+
+.study-strip p {
+  margin-left: 50px;
+  width: 100px;
+}
+
+.skill-strip {
+  /* width: 500px; */
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  margin: 20px;
+  /* width: initial; */
+}
+.skill-strip p {
+  margin: 20px;
+  font-size: 14px;
 }

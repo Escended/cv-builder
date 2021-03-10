@@ -1,126 +1,58 @@
-import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import EditableText from './EditableText';
-class Header extends Component {
-  constructor() {
-    super();
-    this.state = {
-      firstName: 'First Name',
-      lastName: 'Last Name',
-      jobTitle: 'Software Developer',
-      mobile: '07449777777',
-      email: 'email@mail.co.uk',
-      isEditing: false,
-    };
+import React, { useState } from 'react';
+import InlineEditText from './InlineEditText';
 
-    this.handleChange = this.handleChange.bind(this);
-  }
+const Header = () => {
+  const [name, setName] = useState('First Name');
+  const [lastName, setLastName] = useState('Last Name');
+  const [job, setJob] = useState('Software Engineer');
+  const [phone, setPhone] = useState('00000000000');
+  const [email, setEmail] = useState('email@mail.co.uk');
+  const [location, setLocation] = useState('London, UK');
 
-  handleChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value,
-    });
-  }
-
-  handleOnclick() {}
-
-  render() {
-    const { firstName, lastName, jobTitle, mobile, email } = this.state;
-    return (
-      <div className='Header'>
-        <EditableText
-          name='first-name input-name'
-          text={firstName}
-          placeholder='First name'
-          type='input'
-        >
-          <input
-            className='first-name input-name'
-            name='firstName'
-            type='text'
-            placeholder='First name'
-            value={firstName}
-            onChange={this.handleChange}
+  return (
+    <div className='header section  '>
+      <div className='personal-info'>
+        <h1>
+          <InlineEditText
+            placeholder={name}
+            text={name}
+            onSetText={(name) => setName(name)}
           />
-        </EditableText>
-
-        <EditableText
-          name='last-name input-name'
-          text={lastName}
-          placeholder='Last name'
-          type='input'
-        >
-          <input
-            className='last-name input-name'
-            size='50'
-            name='lastName'
-            type='text'
-            placeholder='Last name'
-            value={lastName}
-            onChange={this.handleChange}
+        </h1>
+        <h1>
+          <InlineEditText
+            text={lastName}
+            onSetText={(lastName) => setLastName(lastName)}
           />
-        </EditableText>
-
-        <EditableText
-          name='job-title'
-          text={jobTitle}
-          placeholder='Job title'
-          type='input'
-        >
-          <input
-            className='job-title'
-            name='jobTitle'
-            type='text'
-            placeholder='Job title'
-            value={jobTitle}
-            onChange={this.handleChange}
-          />
-        </EditableText>
-
-        <div className='contact'>
-          <FontAwesomeIcon icon='mobile' className='mobile-svg icon' />
-          {/* <h5 className='mobile'>{mobile}</h5> */}
-
-          <EditableText
-            name='mobile'
-            text={mobile}
-            placeholder='07449493777'
-            type='input'
-          >
-            <input
-              className='mobile-input'
-              name='mobile'
-              type='text'
-              placeholder='07449493777'
-              value={mobile}
-              onChange={this.handleChange}
+        </h1>
+        <h3>
+          <InlineEditText text={job} onSetText={(job) => setJob(job)} />
+        </h3>
+      </div>
+      <div className='contact-info'>
+        <div className='shift'>
+          <div>
+            <InlineEditText
+              text={phone}
+              onSetText={(phone) => setPhone(phone)}
             />
-          </EditableText>
-          <FontAwesomeIcon icon='envelope-open' className='mail-svg icon' />
-          {/* <h5 className='email'>{email}</h5> */}
-          <EditableText
-            name='email'
-            text={email}
-            placeholder='07449493777'
-            type='input'
-          >
-            <input
-              className='email'
-              name='email'
-              type='text'
-              placeholder='email@mail.co.uk'
-              value={email}
-              onChange={this.handleChange}
+          </div>
+          <div>
+            <InlineEditText
+              text={email}
+              onSetText={(email) => setEmail(email)}
             />
-          </EditableText>
+          </div>
+          <div>
+            <InlineEditText
+              text={location}
+              onSetText={(location) => setLocation(location)}
+            />
+          </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Header;
