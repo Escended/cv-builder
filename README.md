@@ -6,4 +6,15 @@ The header is built using editable text components which I found here https://jo
 
 Rest of the sections are built out using react hooks.
 
+---
+
+### Todo
+
+---
+
+- Create update/delete functionality
+- Ability to export into .pdf format
+- save using localStorage
+- Add/delete sections
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
