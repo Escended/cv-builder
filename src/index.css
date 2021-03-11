@@ -218,3 +218,16 @@ code {
   margin: 20px;
   font-size: 14px;
 }
+
+.projects-container {
+  margin: 40px;
+}
+
+.project-item h5 {
+  margin: 0;
+  font-style: italic;
+}
+
+.project-item p {
+  margin-bottom: 20px;
+}
